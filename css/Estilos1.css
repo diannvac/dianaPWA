@@ -1,0 +1,177 @@
+*
+{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    color: #BBBBBB;
+    font-weight: 900;
+    font-style: italic;
+}
+
+:root
+{
+  --Fondo: #282828;
+  --Sombra-Clara: #303030;
+  --Sombra-Oscura: #212121;
+
+  --Sombra-Afuera: 5px 5px 10px var(--Sombra-Oscura),
+                  -5px -5px 10px var(--Sombra-Clara);
+
+  --Sombra-Ambas: inset 5px 5px 10px var(--Sombra-Oscura),
+                  inset -5px -5px 10px var(--Sombra-Clara),
+                         3px 3px 6px var(--Sombra-Oscura),
+                        -3px -3px 6px var(--Sombra-Clara);
+}
+
+
+/* - ELEMENTOS FLEXIBLES--------------------------------------- */
+
+body,
+.hijo-encabezado,
+.hijo-encabezado .texto-encabezado,
+#caja-padre, .cont-form, .cont-boton,
+#formulario
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* - ELEMENTOS FLEXIBLES--------------------------------------- */
+
+
+body
+ {
+  align-content: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: var(--Fondo);
+ }
+
+body section
+{
+  max-width: 1200px;
+}
+
+.encabezado
+{
+  margin-bottom: 50px;
+  padding: 7px;
+  border-radius: 100px;
+  background-color: #341968;
+  box-shadow:  10px 10px 20px var(--Sombra-Oscura),
+  -10px -10px 20px var(--Sombra-Clara);
+}
+
+.hijo-encabezado
+ {
+   width: 1000px;
+   padding: 20px;
+   background-color: var(--Fondo);
+   border-radius: 100px;
+   border: 10px solid var(--Fondo);
+   box-shadow: inset 3px 3px 5px var(--Sombra-Oscura),
+              inset -3px -3px 5px var(--Sombra-Clara);
+ }
+
+.hijo-encabezado .texto-encabezado
+{
+  height: 70px;
+  padding: 0px 40px;
+  font-size: 24px;
+  border-radius: 100px;
+  background-color: var(--Fondo);
+  box-shadow: var(--Sombra-Afuera)
+}
+
+#caja-padre, .cont-form, .cont-boton
+ {
+   align-content: center;
+   flex-wrap: wrap;
+   gap: 2%;
+   width: 1000px;
+   margin: 5px;
+   border: 6px solid var(--Fondo);
+   border-radius: 50px;
+   padding: 20px 15px;
+   background-color: var(--Fondo);
+   box-shadow: var(--Sombra-Ambas)
+ }
+
+.cont-form, .cont-boton
+ {
+   width: 450px;
+ }
+
+#formulario
+{
+   align-content: center;
+   flex-wrap: wrap;
+   gap: 20px;
+}
+
+#formulario input[type="text"], #btn-guardar
+{
+  width: 300px;
+  padding: 20px;
+  border-radius: 40px;
+  border: none;
+  color: #BBBBBB;
+  text-align: center;
+  outline: none;
+  box-shadow: inset 3px 3px 6px var(--Sombra-Oscura),
+              inset -3px -3px 6px var(--Sombra-Clara),
+                     0px 0px 0px transparent,
+                     0px 0px 0px transparent;
+  background-color: var(--Fondo);
+  transition: box-shadow 0.5s ease 0s;
+}
+
+::placeholder
+{
+  color: #bbbbbb6e;
+}
+
+#formulario input[type="text"]:hover,
+#formulario input[type="text"]:focus
+{
+  box-shadow: inset 0px 0px 0px transparent,
+              inset 0px 0px 0px transparent,
+                     3px 3px 6px var(--Sombra-Oscura),
+                     -3px -3px 6px var(--Sombra-Clara);
+}
+
+.cont-boton
+{
+   box-shadow: none;
+}
+
+.cont-boton .cont-hijo
+{
+  border-radius: 50%;
+  box-shadow:  10px 10px 20px var(--Sombra-Oscura),
+               -10px -10px 20px var(--Sombra-Clara);
+
+}
+
+.cont-boton .cont-hijo .padre-boton
+{
+  padding: 7px;
+  border-radius: 50%;
+  background-color: #341968;
+  transition: background-color 0.5s ease-out;
+}
+
+#btn-guardar
+{
+  width: 150px;
+  height: 150px;
+  border: 10px solid var(--Fondo);
+  border-radius: 50%;
+  box-shadow: inset 3px 3px 5px var(--Sombra-Oscura),
+              inset -3px -3px 5px var(--Sombra-Clara);
+}
